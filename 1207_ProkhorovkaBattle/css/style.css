@@ -12,6 +12,18 @@ h1 {
     font-family: Georgia, Times, serif;
     font-weight: normal;
 }
+h3 {
+  color: #ffffff;
+  font: size 24pt;
+  font-family: knileregular, Times, serif;
+  font-weight: 600;
+}
+div+h2 {
+    color: #a52a2a;
+    font-size:20pt;
+    font-family: Georgia, Times, serif;
+    font-weight: bold;
+}
 p {
     font-size: 120%;
     font-family:  knileregular;
@@ -21,7 +33,7 @@ p {
     line-height: normal;
     color: #fcf3fc;
 }
-li {
+ol li {
     font-size: 120%;
     font-family:  knileregular;
     font-style: normal;
@@ -30,6 +42,20 @@ li {
     line-height: normal;
     color: #fcf3fc;
 }
+div > hr {
+    border-top: 1px solid red;
+}
+Q {
+  font-style: italic;
+  quotes: "\00AB" "\00BB";
+  font-size: 130%;
+    font-family:  knileregular;
+    font-style: normal;
+    font-weight: 500;
+ }
+ Q[title] {
+  color: maroon;
+ }
 body.menuBckgGrad {
     background: linear-gradient(90deg, rgb(141, 176, 173) 10%, 30%, rgb(77, 135, 153));
 }
@@ -49,6 +75,15 @@ body.menuBckgGrad {
         yellow 150px, green 200px, blue 250px,
         indigo 300px, violet 350px, red 370px);
     text-align: center;
+}
+ul li {
+  font-size: 120%;
+  font-family:  knileregular;
+  font-style: normal;
+  font-weight: 500;
+  font-variant: normal;
+  line-height: normal;
+  color: #fcf3fc;
 }
 @font-face {
     font-family: 'knileregular';
@@ -104,6 +139,97 @@ li::before {
 }
 .dropdown-content a:hover {background-color: #ddd;}
 .dropdown:hover .dropdown-content {display: block;}
+.foo {
+    width: 250px;
+    height: 150px;
+    margin: 0 auto;
+    -o-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    display: inline-block;
+    overflow:hidden;
+    padding: 15px;
+  }
+.imgScale:hover {
+    -o-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+    overflow:visible;
+    border: none;
+}
+.move:hover {
+    text-align: center;
+    border-radius: 4px;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transform:translateX(-28%)
+}
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background: green;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    -webkit-animation: pulsing 2s infinite;
+    animation: pulsing 2s infinite;
+  }
+  @-webkit-keyframes pulsing {
+    0% {
+      -webkit-transform: scale(0.5, 0.5);
+      transform: scale(0.5, 0.5)
+    }
+    50% {
+      -webkit-transform: scale(1.0, 1.0);
+      transform: scale(1.0, 1.0);
+    }
+    100% {
+      -webkit-transform: scale(0.5, 0.5);
+      transform: scale(0.5, 0.5);
+    }
+  }
+  
+  @keyframes pulsing {
+    0% {
+      -webkit-transform: scale(0.5, 0.5);
+      transform: scale(0.5, 0.5)
+    }
+    50% {
+      -webkit-transform: scale(1.0, 1.0);
+      transform: scale(1.0, 1.0);
+    }
+    100% {
+      -webkit-transform: scale(0.5, 0.5);
+      transform: scale(0.5, 0.5);
+    }
+  }
+  .photo {
+    display: inline-block;
+    position: relative;
+   }
+  .photo:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 20%; top: 30%;
+    z-index: 1;
+    background: rgba(96, 171, 177, 0.9);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    padding: 5px 10px;
+    border: 1px solid #333;
+   }
+   #flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
 }
 @media print {
     body {
